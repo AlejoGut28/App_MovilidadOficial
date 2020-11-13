@@ -6,11 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/vacantes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_vacantes"
             android:title="@string/vacantes" />
+        <item
+            android:id="@+id/convenios"
+            android:icon="@drawable/ic_convenios"
+            android:title="@string/convenios" />
+        <item
+            android:id="@+id/solicitudes_alumnos"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/solicitud_alumno" />
+        <item
+            android:id="@+id/convocatorias"
+            android:icon="@drawable/ic_publicar_vacante"
+            android:title="@string/convocatorias" />
+        <item
+            android:id="@+id/solicitudes_docentes"
+            android:icon="@drawable/ic_soli_docente"
+            android:title="@string/solicitud_docente" />
     </group>
 </menu>

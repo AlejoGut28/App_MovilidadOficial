@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Vacantes#newInstance} factory method to
+ * Use the {@link Solicitudes_docentes#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Vacantes extends Fragment {
+public class Solicitudes_docentes extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class Vacantes extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Vacantes() {
+    public Solicitudes_docentes() {
         // Required empty public constructor
     }
 
@@ -34,11 +34,11 @@ public class Vacantes extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Vacantes.
+     * @return A new instance of fragment Solicitudes_docentes.
      */
     // TODO: Rename and change types and number of parameters
-    public static Vacantes newInstance(String param1, String param2) {
-        Vacantes fragment = new Vacantes();
+    public static Solicitudes_docentes newInstance(String param1, String param2) {
+        Solicitudes_docentes fragment = new Solicitudes_docentes();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class Vacantes extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vacantes, container, false);
+        return inflater.inflate(R.layout.fragment_solicitudes_docentes, container, false);
     }
 }
