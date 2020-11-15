@@ -31,6 +31,16 @@
         android:name="com.upeu.app_movilidadoficial.Solicitudes_docentes"
         android:label="@string/solicitud_docente"
         tools:layout="@layout/fragment_solicitudes_docentes" />
+    <fragment
+        android:id="@+id/det_Convenio"
+        android:name="com.upeu.app_movilidadoficial.Det_Convenio"
+        android:label="fragment_det__convenio"
+        tools:layout="@layout/fragment_det__convenio" />
+    <fragment
+        android:id="@+id/docs_Alumno"
+        android:name="com.upeu.app_movilidadoficial.Docs_Alumno"
+        android:label="fragment_docs__alumno"
+        tools:layout="@layout/fragment_docs__alumno" />
 
 
 </navigation>
