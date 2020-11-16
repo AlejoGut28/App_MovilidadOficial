@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_MovilidadOficial">
+        <activity android:name=".Docs_Docente"></activity>
+        <activity android:name=".Requisitos_Convocatorias" />
+        <activity android:name=".Boton_vacantes" />
         <activity
             android:name=".Nav_Drawer"
             android:label="@string/title_activity_nav__drawer"
-            android:theme="@style/Theme.App_MovilidadOficial.NoActionBar"></activity>
+            android:theme="@style/Theme.App_MovilidadOficial.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
