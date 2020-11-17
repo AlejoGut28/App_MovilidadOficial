@@ -122,15 +122,14 @@
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
         android:text="Alejandro Gutierrez Beltran"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="@+id/imageView44"
         app:layout_constraintTop_toTopOf="@+id/imageView44"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintVertical_bias="0.242" />
 
     <ImageView
         android:id="@+id/imageView9"

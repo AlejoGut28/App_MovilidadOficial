@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu_main"
+    android:background="@drawable/fondo">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="114dp"
+        android:layout_marginEnd="114dp"
+        android:text="UPeU Sismocaed"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.853" />
+
+    <ImageButton
+        android:id="@+id/ImageButtonVac"
+        android:layout_width="309dp"
+        android:layout_height="291dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="100dp"
+        android:background="#0000"
+        android:src="@drawable/vacantes_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSol_alu"
+        android:layout_width="309dp"
+        android:layout_height="291dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="128dp"
+        android:background="#0000"
+        android:src="@drawable/sol_alum_menu"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonConvo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonConvo"
+        android:layout_width="309dp"
+        android:layout_height="291dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="200dp"
+        android:background="#0000"
+        android:src="@drawable/convo_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonConve"
+        android:layout_width="309dp"
+        android:layout_height="291dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="176dp"
+        android:background="#0000"
+        android:src="@drawable/conve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonSol_doc"
+        android:layout_width="309dp"
+        android:layout_height="291dp"
+        android:layout_marginTop="100dp"
+        android:background="#0000"
+        android:src="@drawable/sol_doc_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

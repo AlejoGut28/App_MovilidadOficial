@@ -8,28 +8,28 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.upeu.app_movilidadoficial.ui.home.HomeFragment"
-        android:label="@string/vacantes"
+        android:label=""
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/convenios"
         android:name="com.upeu.app_movilidadoficial.Convenios"
-        android:label="@string/convenios"
+        android:label=""
         tools:layout="@layout/fragment_convenios" />
 
     <fragment
         android:id="@+id/solicitudes_alumnos"
         android:name="com.upeu.app_movilidadoficial.Solicitudes_alumnos"
-        android:label="@string/solicitud_alumno"
+        android:label=""
         tools:layout="@layout/fragment_solicitudes_alumnos" />
     <fragment
         android:id="@+id/convocatorias"
         android:name="com.upeu.app_movilidadoficial.Convocatorias"
-        android:label="@string/convocatorias"
+        android:label=""
         tools:layout="@layout/fragment_convocatorias" />
     <fragment
         android:id="@+id/solicitudes_docentes"
         android:name="com.upeu.app_movilidadoficial.Solicitudes_docentes"
-        android:label="@string/solicitud_docente"
+        android:label=""
         tools:layout="@layout/fragment_solicitudes_docentes" />
     <fragment
         android:id="@+id/det_Convenio"

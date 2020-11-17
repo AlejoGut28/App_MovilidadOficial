@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Boton_vacantes"
+    tools:context=".Det_Vacante"
     android:background="@drawable/fondo">
 
     <TextView

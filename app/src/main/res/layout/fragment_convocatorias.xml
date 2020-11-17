@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/combo_req_button"
         android:layout_width="128dp"
         android:layout_height="45dp"
         android:backgroundTint="#9A2D46"
