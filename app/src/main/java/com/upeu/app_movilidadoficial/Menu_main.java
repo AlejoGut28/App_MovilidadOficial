@@ -8,19 +8,18 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Menu_main extends AppCompatActivity {
-
+    ImageButton imageButtonConve;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_main);
-        ImageButton imageButtonConve = (ImageButton) findViewById(R.id.convenios);
-        imageButtonConve.setOnClickListener(new View.OnClickListener() {
+        imageButtonConve =  findViewById(R.id.convenios);
+        /*imageButtonConve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Convenios.class);
-                startActivityForResult(intent,0);
-
+                startActivityForResult(intent, 0);
             }
-        });
+        });*/
     }
 }
