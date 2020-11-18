@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_MovilidadOficial">
-        <activity android:name=".Menu_main"></activity>
+        <activity android:name=".Docs_adjuntados"></activity>
+        <activity android:name=".Det_convenio" />
+        <activity android:name=".Menu_main" />
         <activity android:name=".Docs_Docente" />
         <activity android:name=".Requisitos_Convocatorias" />
         <activity android:name=".Boton_vacantes" />

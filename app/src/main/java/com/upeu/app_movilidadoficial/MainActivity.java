@@ -1,6 +1,9 @@
 package com.upeu.app_movilidadoficial;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     Button login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         login = findViewById(R.id.sigin);
 
         redirigir();
-    }
+
+
+}
 
 
     public void redirigir() {
