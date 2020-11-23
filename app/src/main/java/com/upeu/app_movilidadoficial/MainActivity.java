@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +25,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-<<<<<<< HEAD
+
     Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl("http://35.232.83.197:8888")
             .addConverterFactory(GsonConverterFactory.create());
@@ -33,12 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn_login;
     EditText user, pass;
-=======
-
-
 
     Button login;
->>>>>>> b2bd8ad57a41e960d3083f9a2f20ad2fd5dd352a
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.userName);
         pass = findViewById(R.id.password);
 
-<<<<<<< HEAD
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,45 +56,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-=======
-        redirigir();
-
-
-}
->>>>>>> b2bd8ad57a41e960d3083f9a2f20ad2fd5dd352a
 
     private static String token;
-    private void login(){
+    private void login() {
         Login login = new Login(user.getText().toString(), pass.getText().toString());
         Call<User> call = userClient.login(login);
-        
+        //Log.i("Usuario", login);
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
-                    String ResponseJson = response.body().toString();
-                    Gson gson = new Gson();
-                    User objResp = gson.fromJson(ResponseJson, User.class);
-                    Toast.makeText(MainActivity.this, objResp.getToken(), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(MainActivity.this, "Token Obtenido !", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(MainActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
+                    token = response.body().getToken();
                 } else {
-                    Toast.makeText(MainActivity.this, "Token no recivido", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
-<<<<<<< HEAD
             public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "error !", Toast.LENGTH_SHORT).show();
-=======
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), Nav_Drawer.class);
-                startActivityForResult(intent, 0);
->>>>>>> b2bd8ad57a41e960d3083f9a2f20ad2fd5dd352a
+
             }
         });
     }
-
 
 }
