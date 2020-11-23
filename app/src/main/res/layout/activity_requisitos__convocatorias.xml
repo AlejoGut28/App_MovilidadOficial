@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btn_soli"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="28dp"
@@ -48,7 +48,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/btn_carta"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
