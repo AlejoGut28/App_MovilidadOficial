@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
     tools:context=".MainActivity">
 
     <ImageView
@@ -37,7 +38,8 @@
         android:background="@drawable/style_bordes"
         android:ems="10"
         android:hint="   Usuario"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/password"
@@ -49,7 +51,8 @@
         android:background="@drawable/style_bordes"
         android:ems="10"
         android:hint="   Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textAlignment="center" />
 
     <Button
         android:id="@+id/sigin"

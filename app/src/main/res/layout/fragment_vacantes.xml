@@ -241,7 +241,7 @@
         app:layout_constraintVertical_bias="0.00999999" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/b_vacantes_deta4"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
@@ -255,7 +255,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/b_vacantes_det3"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
@@ -269,7 +269,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/b_vacantes_deta2"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"
@@ -283,7 +283,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/b_vacantes_deta1"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="25dp"

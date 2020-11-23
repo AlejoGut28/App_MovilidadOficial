@@ -176,7 +176,7 @@
         app:layout_constraintVertical_bias="0.26" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/b_vacantes_deta1"
         android:layout_width="43dp"
         android:layout_height="40dp"
         android:layout_marginTop="28dp"
