@@ -9,13 +9,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.upeu.app_movilidadoficial.Interfaces.ConvenioInterface;
+import com.upeu.app_movilidadoficial.Interfaces.ConvocatoriaInterface;
+import com.upeu.app_movilidadoficial.Models.Convenio;
+import com.upeu.app_movilidadoficial.Models.Convocatoria;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Convocatorias#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Convocatorias extends Fragment {
+    private final String baseUrl = "http://35.232.83.197:8888/";
 
+
+    List<Convocatoria> listaConvocatorias = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -51,6 +66,11 @@ public class Convocatorias extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).
+                addConverterFactory(GsonConverterFactory.create())
+                .build();
+        ConvocatoriaInterface convocatoriaInterface = retrofit.create(ConvocatoriaInterface.class);
+        Call<List<Convocatoria>> lista = convocatoriaInterface.getConvocatoria();
 
 
         if (getArguments() != null) {

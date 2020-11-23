@@ -27,8 +27,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity {
 
     Retrofit.Builder builder = new Retrofit.Builder()
-            .baseUrl("http://35.232.83.197:8888")
-            .addConverterFactory(GsonConverterFactory.create());
+            .baseUrl("http://35.232.83.197:8888/")
+                    .addConverterFactory(GsonConverterFactory.create());
 
     Retrofit retrofit  = builder.build();
     UserClient userClient = retrofit.create(UserClient.class);
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
-                /*Intent intent = new Intent(v.getContext(), Menu_main.class);
+                /*Intent intent = new Intent(v.getContext(), Nav_Drawer.class);
                 startActivityForResult(intent, 0);*/
             }
         });
@@ -61,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
     private void login() {
         Login login = new Login(user.getText().toString(), pass.getText().toString());
         Call<User> call = userClient.login(login);
+
         //Log.i("Usuario", login);
+
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
                     token = response.body().getToken();
                 } else {
+
                     Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -81,3 +84,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+

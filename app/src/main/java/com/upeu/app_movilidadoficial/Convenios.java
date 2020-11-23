@@ -9,6 +9,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.upeu.app_movilidadoficial.Interfaces.ConvenioInterface;
+import com.upeu.app_movilidadoficial.Models.Convenio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,11 +29,17 @@ import android.widget.Button;
  * create an instance of this fragment.
  */
 public class Convenios extends Fragment {
+
+
+    private final String baseUrl = "http://35.232.83.197:8888/";
     private Button v_detalleconv_1;
     private Button v_detalleconv_2;
     private Button v_detalleconv_3;
 
-
+    private TextView textView9;
+    private TextView textView10;
+    private TextView textView12;
+    List<Convenio> listaConvenios = new ArrayList<>();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +78,26 @@ public class Convenios extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(baseUrl).
+                addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        ConvenioInterface convenioInterface = retrofit.create(ConvenioInterface.class);
+        Call<List<Convenio>> lista = convenioInterface.getConvenios();
+        lista.enqueue(new Callback<List<Convenio>>() {
+            @Override
+            public void onResponse(Call<List<Convenio>> call, Response<List<Convenio>> response) {
+                if(response.isSuccessful())
+                listaConvenios = response.body();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Convenio>> call, Throwable t) {
+
+            }
+        });
+
     }
 
     @Override
