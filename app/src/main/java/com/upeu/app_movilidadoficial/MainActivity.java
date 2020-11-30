@@ -1,42 +1,30 @@
 package com.upeu.app_movilidadoficial;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.upeu.app_movilidadoficial.TokenReceive.api.model.Login;
-import com.upeu.app_movilidadoficial.TokenReceive.api.model.User;
-import com.upeu.app_movilidadoficial.TokenReceive.api.service.UserClient;
+import com.upeu.app_movilidadoficial.TokenReceive.api.api.WebServiceOauth;
+import com.upeu.app_movilidadoficial.TokenReceive.api.api.WebServiceOauthApi;
+import com.upeu.app_movilidadoficial.TokenReceive.api.model.Token;
+import com.upeu.app_movilidadoficial.TokenReceive.api.share_pref.TokenManager;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    Retrofit.Builder builder = new Retrofit.Builder()
-            .baseUrl("http://35.232.83.197:8888/")
-                    .addConverterFactory(GsonConverterFactory.create());
-
-    Retrofit retrofit  = builder.build();
-    UserClient userClient = retrofit.create(UserClient.class);
-
     Button btn_login;
     EditText user, pass;
+    private TokenManager tokenManager;
 
-    Button login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,42 +34,49 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.userName);
         pass = findViewById(R.id.password);
 
+        setUpView();
+    }
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-                /*Intent intent = new Intent(v.getContext(), Nav_Drawer.class);
-                startActivityForResult(intent, 0);*/
-            }
+    private void setUpView() {
+        tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
+        btn_login.setOnClickListener((v) -> {
+            Toast.makeText(MainActivity.this, "Logeado", Toast.LENGTH_SHORT).show();
+            obtenerToken();
         });
     }
 
-    private static String token;
-    private void login() {
-        Login login = new Login(user.getText().toString(), pass.getText().toString());
-        Call<User> call = userClient.login(login);
+    private void obtenerToken() {
+        String authHeader = "Basic " + Base64.encodeToString(("alejoelrey:alejoelmejor123456").getBytes(), Base64.NO_WRAP);
+        Call<Token> call = WebServiceOauth
+                .getInstance()
+                .createService(WebServiceOauthApi.class)
+                .obtenerToken(
+                        authHeader,
+                        user.getText().toString(),
+                        pass.getText().toString(),
+                        "password"
+                );
 
-        //Log.i("Usuario", login);
-
-        call.enqueue(new Callback<User>() {
+        call.enqueue(new Callback<Token>() {
+            Token token = new Token();
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, response.body().getToken(), Toast.LENGTH_SHORT).show();
-                    token = response.body().getToken();
-                } else {
+            public void onResponse(Call<Token> call, Response<Token> response) {
+                if(response.code()==200) {
+                    Log.d("TAG1", "Access Token: " + response.body().getAccessToken()
+                    +" Refresh Token: " + response.body().getRefreshToken());
 
-                    Toast.makeText(MainActivity.this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
+                    token = response.body();
+                    tokenManager.saveToken(token);
+                } else {
+                    Log.d("TAG1", "Error");
                 }
             }
+
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "error !", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<Token> call, Throwable t) {
 
             }
         });
     }
-
 }
 

@@ -1,57 +1,41 @@
 package com.upeu.app_movilidadoficial.TokenReceive.api.model;
 
-import com.google.gson.annotations.SerializedName;
-
 public class User {
 
-    @SerializedName("token")
-    private String token;
-    @SerializedName("bearer")
-    private String bearer;
-    @SerializedName("nombreUsuario")
-    private String nombreUsuario;
-    @SerializedName("authorities")
-    private String[] authorities;
+    private Long idusuario;
+    private String username;
+    private String password;
 
     public User() {
     }
 
-    public User(String token, String bearer, String nombreUsuario, String[] authorities) {
-        this.token = token;
-        this.bearer = bearer;
-        this.nombreUsuario = nombreUsuario;
-        this.authorities = authorities;
+    public User(Long idusuario, String username, String password) {
+        this.idusuario = idusuario;
+        this.username = username;
+        this.password = password;
     }
 
-    public String getToken() {
-        return token;
+    public Long getIdusuario() {
+        return idusuario;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setIdusuario(Long idusuario) {
+        this.idusuario = idusuario;
     }
 
-    public String getBearer() {
-        return bearer;
+    public String getUsername() {
+        return username;
     }
 
-    public void setBearer(String bearer) {
-        this.bearer = bearer;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String[] getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(String[] authorities) {
-        this.authorities = authorities;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -83,8 +83,8 @@ public class Convenios extends Fragment {
                 .build();
 
         ConvenioInterface convenioInterface = retrofit.create(ConvenioInterface.class);
-        Call<List<Convenio>> lista = convenioInterface.getConvenios();
-        lista.enqueue(new Callback<List<Convenio>>() {
+        //Call<List<Convenio>> lista = convenioInterface.getConvenios();
+        /*lista.enqueue(new Callback<List<Convenio>>() {
             @Override
             public void onResponse(Call<List<Convenio>> call, Response<List<Convenio>> response) {
                 if(response.isSuccessful())
@@ -96,14 +96,14 @@ public class Convenios extends Fragment {
             public void onFailure(Call<List<Convenio>> call, Throwable t) {
 
             }
-        });
+        });*/
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_convenios, container, false);
+        /*View v =  inflater.inflate(R.layout.fragment_convenios, container, false);
         v_detalleconv_1 = v.findViewById(R.id.v_detalleconv_1);
         v_detalleconv_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +126,7 @@ public class Convenios extends Fragment {
                 startActivity(new Intent(getActivity(),Docs_adjuntados.class));
             }
         });
-        return v;
+        return v;*/
+        return inflater.inflate(R.layout.fragment_convenios, container, false);
     }
 }
