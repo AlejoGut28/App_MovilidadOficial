@@ -2,6 +2,7 @@ package com.upeu.app_movilidadoficial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
@@ -16,6 +17,7 @@ import com.upeu.app_movilidadoficial.TokenReceive.api.api.WebServiceOauthApi;
 import com.upeu.app_movilidadoficial.TokenReceive.api.model.Token;
 import com.upeu.app_movilidadoficial.TokenReceive.api.share_pref.TokenManager;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpView() {
         tokenManager = TokenManager.getInstance(getSharedPreferences(TokenManager.SHARED_PREFERENCES, MODE_PRIVATE));
         btn_login.setOnClickListener((v) -> {
-            Toast.makeText(MainActivity.this, "Logeado", Toast.LENGTH_SHORT).show();
             obtenerToken();
-            Intent intent = new Intent();
         });
     }
 
@@ -69,8 +69,18 @@ public class MainActivity extends AppCompatActivity {
 
                     token = response.body();
                     tokenManager.saveToken(token);
+
+
+                    startActivity(new Intent(MainActivity.this, Nav_Drawer.class));
+                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.SUCCESS_TYPE)
+                            .setTitleText("Bienvenido "  + user.getText().toString())
+                            .show();
+                    // Toast.makeText(MainActivity.this, "Logeado", Toast.LENGTH_SHORT).show();
                 } else {
                     Log.d("TAG1", "Error");
+                    new SweetAlertDialog(MainActivity.this, SweetAlertDialog.ERROR_TYPE)
+                            .setTitleText("Error al logearse.. vuelva a intentarlo")
+                            .show();
                 }
             }
 
