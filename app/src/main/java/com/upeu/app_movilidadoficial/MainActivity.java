@@ -2,6 +2,7 @@ package com.upeu.app_movilidadoficial;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener((v) -> {
             Toast.makeText(MainActivity.this, "Logeado", Toast.LENGTH_SHORT).show();
             obtenerToken();
+            Intent intent = new Intent();
         });
     }
 
