@@ -25,4 +25,42 @@
             android:icon="@drawable/ic_soli_docente"
             android:title="@string/solicitud_docente" />
     </group>
+    <group android:checkableBehavior="single">
+        <item
+
+           >
+
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+
+            >
+
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+
+            >
+
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+
+            >
+
+        </item>
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:iconTint="@color/upeu"
+            
+            android:icon="@drawable/ic_baseline_login_24"
+            android:title="Cerrar Sesion">
+
+        </item>
+    </group>
+
 </menu>
