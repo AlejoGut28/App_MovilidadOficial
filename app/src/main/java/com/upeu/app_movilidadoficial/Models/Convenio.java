@@ -5,7 +5,7 @@ public class Convenio extends Universidad {
     private Number fecha_fin;
     private Number fecha_inicio;
     private String n_documento;
-    private Universidad  iduniversidad;
+    private Number iduniversidad;
 
     public Number getIdconvenio() {
         return idconvenio;
@@ -39,11 +39,11 @@ public class Convenio extends Universidad {
         this.n_documento = n_documento;
     }
 
-    public Universidad getIduniversidad() {
+    public Number getIduniversidad() {
         return iduniversidad;
     }
 
-    public void setIduniversidad(Universidad iduniversidad) {
+    public void setIduniversidad(Number iduniversidad) {
         this.iduniversidad = iduniversidad;
     }
 }

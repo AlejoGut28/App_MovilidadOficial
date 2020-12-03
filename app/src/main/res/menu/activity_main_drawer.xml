@@ -56,7 +56,7 @@
     <group android:checkableBehavior="single">
         <item
             android:iconTint="@color/upeu"
-            
+            android:id="@+id/logout"
             android:icon="@drawable/ic_baseline_login_24"
             android:title="Cerrar Sesion">
 
